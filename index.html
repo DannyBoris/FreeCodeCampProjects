@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favi.jfif" >
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <title>Survey</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Save the Trees, Save the Bees...</h1>
+            <h3><i>A Short Servey to help us better understand  human action towards the environment</i></h3>
+        </header>
+        <form action="http://localhost:3000" method="POST" class="form center">
+            <div class="input-control">
+                <label for="">Name</label>
+                <input  required type="text" name="name" id="">
+            </div>
+            <div class="input-control">
+                <label for="">Email (Optional)</label>
+                <input type="text" name="email" id="">
+            </div>
+            <div class="input-control">
+                <label for="">Age <span>(Optional)</span></label>
+                <input type="text" name="age" id="">
+            </div>
+            <div class="input-control">
+                <label for="">Which option best describes your current role?</label>
+                <select required name="" id="">
+                    <option disabled selected value="">Select current role</option>
+                    <option value="">Student</option>
+                    <option value="">Full Time Job</option>
+                    <option value="">Full Time Learner</option>
+                    <option value="">Other</option>
+                </select>
+            </div>
+            <div class="input-control radio-group">
+                <label for="">Would you define yourself as an environmentalist</label>
+                <div>
+                    <input size="20em" type="radio" name="environmentalist?" value="yes" id="y">
+                    <label for="y">Definitely</label>
+                </div>
+                <div>
+                    <input type="radio" name="d" value="environmentalist?" id="m">
+                    <label for="m">Not Sure</label>
+                </div>
+                <div>
+                    <input type="radio" name="d" value="environmentalist?" id="n">
+                    <label for="n">No</label>
+                </div>
+         
+             
+            </div>
+            <div class="input-control">
+                <label for="">What aspect of the environment do you think needs most attention?</label>
+                <select required name="aspects" id="">
+                    <option disabled selected value="none">Select an option</option>
+                    <option value="oceans">Oceans</option>
+                    <option value="forests">Forest/Jungles</option>
+                    <option value="air-pollution">Air Pollution</option>
+                    <option value="extinct-animals">Extinct Species</option>
+                </select>
+            </div>
+            <div class="input-control">
+                <label for="">How do you contribute to our plant? Please click on options that apply</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-field"">
+                        <input hidden onchange="checkboxChange(this)" type="checkbox" name="contribute" value="plastic" id="platic-usage">
+                        <label for="platic-usage">I try to minimize my usage of  plastic or any unecological product</label>
+                    </div>
+                    <div class="checkbox-field"">
+                        <input hidden onchange="checkboxChange(this)" type="checkbox" name="contribute" value="attend" id="attend">
+                        <label for="attend">I ATTEND meetings/demonstrations</label>
+                    </div>
+                    <div class="checkbox-field"">
+                        <input hidden onchange="checkboxChange(this)" type="checkbox" name="contribute" value="orgnize" id="organize">
+                        <label for="organize">I ORGNIZE meetings/demonstrations</label>
+                    </div>
+                    <div  class="checkbox-field">
+                        <input hidden onchange="checkboxChange(this)" type="checkbox" name="contribute" value="advertise" id="advertise">
+                        <label for="advertise">I actively advertise on social media</label>
+                    </div>
+                    <div class="checkbox-field">
+                        <input hidden onchange="checkboxChange(this)" type="checkbox" value="work-volanteer" name="contribute" id="work">
+                        <label for="work">I volenteer/work in an ecofriendly organization (WWF, Greenpeace etc)</label>
+                    </div>
+                </div>
+                <div class="input-control">
+                    <label for="">What are your thoughts on the impact of Corona Virus on environment?</label>
+                    <textarea required style="height:100px;padding:.5em" type="text" name="comment" id=""></textarea>
+                </div>
+            </div>
+            <button  class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
