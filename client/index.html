@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favi.jfif" >
+    <link rel="icon" href=".imgs/favi.jfif" >
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-            <title>Survey</title>
+    <title>Survey</title>
 </head>
 <body>
     <div class="container">
@@ -15,10 +15,10 @@
             <h2>Save the Trees, Save the Bees...</h2>
             <h4>A Short Servey to help us better understand  human action towards the environment</h4>
         </header>
-        <form action="http://localhost:3000" method="POST" class="form center">
+        <form action="/" method="POST" class="form center">
             <div class="input-control">
                 <label for="">Name</label>
-                <input  required type="text" name="name" id="">
+                <input  required type="text" name="name" id="name">
             </div>
             <div class="input-control">
                 <label for="">Email (Optional)</label>
@@ -41,7 +41,7 @@
             <div class="input-control radio-group">
                 <label for="">Would you define yourself as an environmentalist</label>
                 <div>
-                    <input size="20em" type="radio" name="environmentalist?" value="yes" id="y">
+                    <input type="radio" name="environmentalist?" value="yes" id="y">
                     <label for="y">Definitely</label>
                 </div>
                 <div>

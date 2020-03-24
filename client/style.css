@@ -1,14 +1,11 @@
-:root{
-    --center:margin
-}
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
-body{
-}
+
 .container > :not(.form){
     text-align: center;
 }
@@ -21,14 +18,12 @@ header{
 }
 header> *{
     font-family: 'Open Sans Condensed', sans-serif;
-
-
 }
 
 
 /* This Bear Logo!!! */
 .form::before{
-    content: url('./public/assest/rsz_logo.jpg');
+    content: url('./imgs/rsz_logo.jpg');
     position:absolute;
     transform: scale(.3);
     height: auto;
@@ -122,7 +117,7 @@ input[type=radio] {
 }
 .btn{
     width:100%;
-    background-color: rgb(31, 146, 46);
+    background-color: rgb(21, 231, 214);
     padding:.6em;
     color:white;
     border:none;
@@ -134,7 +129,8 @@ input[type=radio] {
 .checked{
     transition: all .4s;
     border:green 2px solid;
-    background:#5bff624d;
+    background:rgb(51, 178, 224);
+    opacity:.6;
     border-radius: 4px;
 }
 
