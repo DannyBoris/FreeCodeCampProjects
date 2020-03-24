@@ -8,26 +8,33 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 body{
-    background-color: #2A2A2A;
 }
 .container > :not(.form){
     text-align: center;
 }
 
 header{
-    color:white;
+    color:black;
     max-width: 500px;
+    border-bottom: 1px solid rgba(144,144,144,.3);
     margin: 3em auto
 }
+header> *{
+    font-family: 'Open Sans Condensed', sans-serif;
 
+
+}
 
 
 /* This Bear Logo!!! */
 .form::before{
     content: url('./public/assest/rsz_logo.jpg');
     position:absolute;
+    transform: scale(.3);
     height: auto;
-    top:-45px;
+    z-index: -1000;
+    top:-120px;
+    left:-100px;
 }
 
 .center{
@@ -36,12 +43,11 @@ header{
 }
 
 .form{
-    font-weight: 700;
-    padding:30px;
-    border-radius: 1.275em;
+    font-weight:500;
+    border-top: 1px solid rgba(144,144,144,.3);
     filter: grayscale(30%);
-    background: url('./public/assest/tree_bg.jpg') ;
     background-size: cover;
+    padding:0 20px 0;
 }
 
 .radio-group > div{
@@ -74,10 +80,10 @@ input[type=radio] {
     padding: 0.175rem 1rem;
     height:2.75rem;
     font-size:1rem;
-    color:white;
+    color:black;
     border-radius: 8px;
     border:none;
-    background:#0b6e02;
+    background-image:linear-gradient(to top,white,lightblue) ;
     opacity: .9;
     outline: transparent;
     
@@ -93,7 +99,8 @@ input[type=radio] {
 
 .input-control >  label {
     margin: .3em 0;
-    font-size: 1.15em;;
+    font-size: 1.1em;;
+    font-weight:500;
 }
 .checkbox-field{
     width:100%;
