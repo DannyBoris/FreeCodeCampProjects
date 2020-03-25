@@ -14,7 +14,7 @@ header{
     color:black;
     max-width: 500px;
     border-bottom: 1px solid rgba(144,144,144,.3);
-    margin: 3em auto
+    margin: 3.1em auto
 }
 header> *{
     font-family: 'Open Sans Condensed', sans-serif;
@@ -83,7 +83,7 @@ input[type=radio] {
     outline: transparent;
     
 }.input-control > input:focus{
-    box-shadow: .1px .1px .4em 1px green;
+    box-shadow: .1px .1px .4em 1px lightseagreen;
     transition: all .4s ease;
 
 }
@@ -117,20 +117,19 @@ input[type=radio] {
 }
 .btn{
     width:100%;
-    background-color: rgb(21, 231, 214);
+    background:rgb(51, 178, 224);
     padding:.6em;
     color:white;
     border:none;
+    margin-bottom:16px;
     border-radius: 13px;
-    margin-top:2em;
+    margin:2em 0em 2em;
     font-size:1.1em;
 }
 
 .checked{
     transition: all .4s;
-    border:green 2px solid;
     background:rgb(51, 178, 224);
-    opacity:.6;
     border-radius: 4px;
 }
 

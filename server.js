@@ -49,7 +49,7 @@ app.post('/submit', async (req,res)=>{
     })
 
     let newUser = await user.save()
-    res.render('response',{name:newUser.name.toUpperCase()});
+    res.send('thank you')
 })
 
 app.listen(PORT, () => {
