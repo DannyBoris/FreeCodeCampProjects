@@ -1,7 +1,6 @@
 const path = require('path')
 const express = require('express')
 const app = express()
-const config = require('./config')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
 const bodyParser = require('body-parser')
@@ -30,8 +29,8 @@ app.post('/submit', async (req,res)=>{
         contribution:req.body.contribution,
         comment:req.body.comment,
     })
-    let savedUser = await user.save()
-    res.send(`Thank for submitting ${savedUser.name}`)
+    let newUser = await user.save()
+    res.send(`Thank for submitting ${newUser.name}`)
 })
 
 
