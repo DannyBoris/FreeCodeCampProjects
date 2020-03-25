@@ -34,7 +34,18 @@ app.post('/submit', async (req,res)=>{
 })
 
 app.get('/test',(req,res)=>{
-    res.send(process.env);
+    try{
+        mongoose.connect(process.env.DB_CONNECTION ,{
+            useUnifiedTopology: true, 
+            useNewUrlParser:true},
+            ()=>res.send('Connected'))
+    }catch(err){
+        res.send('Could not connect to db!!!' + err)
+    }
+    finally{
+        res.send('ok')
+    }
+    
 })
 
 
