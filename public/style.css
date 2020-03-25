@@ -1,0 +1,143 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.container > :not(.form){
+    text-align: center;
+}
+
+header{
+    color:black;
+    max-width: 500px;
+    border-bottom: 1px solid rgba(144,144,144,.3);
+    margin: 3em auto
+}
+header> *{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+/* This Bear Logo!!! */
+.form::before{
+    content: url('./imgs/rsz_logo.jpg');
+    position:absolute;
+    transform: scale(.3);
+    height: auto;
+    z-index: -1000;
+    top:-120px;
+    left:-100px;
+}
+
+.center{
+    margin:0 auto; 
+    width:50%;
+}
+
+.form{
+    font-weight:500;
+    border-top: 1px solid rgba(144,144,144,.3);
+    filter: grayscale(30%);
+    background-size: cover;
+    padding:0 20px 0;
+}
+
+.radio-group > div{
+    display: flex;
+    align-items: center;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 1.5em;
+}
+
+.checkbox-span{
+    width:10px;
+    height:10px;
+    padding:0 10px;
+    margin:0 10px;
+    border-radius: 10px;
+    border:1px solid black;
+    transition: all 1s ease;
+    
+}
+
+.input-control{
+    display: flex;
+    margin:.4em 0;
+    flex-direction: column;
+}
+.input-control > input, select, textarea{
+    padding: 0.175rem 1rem;
+    height:2.75rem;
+    font-size:1rem;
+    color:black;
+    border-radius: 8px;
+    border:none;
+    background-image:linear-gradient(to top,white,lightblue) ;
+    opacity: .9;
+    outline: transparent;
+    
+}.input-control > input:focus{
+    box-shadow: .1px .1px .4em 1px green;
+    transition: all .4s ease;
+
+}
+
+.input-control  > div{
+    margin:.2em
+}
+
+.input-control >  label {
+    margin: .3em 0;
+    font-size: 1.1em;;
+    font-weight:500;
+}
+.checkbox-field{
+    width:100%;
+    padding:6px;
+    border:2px solid transparent;
+    display:flex;
+    align-items: center;
+}
+
+.checkbox-group{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,.1);
+    padding: .68em .4em 2mm;
+    border-radius: 20px;
+}
+.checkbox-group > div{
+    margin: .3em 0;
+}
+.btn{
+    width:100%;
+    background-color: rgb(21, 231, 214);
+    padding:.6em;
+    color:white;
+    border:none;
+    border-radius: 13px;
+    margin-top:2em;
+    font-size:1.1em;
+}
+
+.checked{
+    transition: all .4s;
+    border:green 2px solid;
+    background:rgb(51, 178, 224);
+    opacity:.6;
+    border-radius: 4px;
+}
+
+
+@media only screen and  (max-width: 1024px){
+    .form{
+        width:100%;
+        border-radius: 0;
+    }
+}
