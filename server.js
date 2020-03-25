@@ -29,11 +29,13 @@ app.post('/submit', async (req,res)=>{
         contribution:req.body.contribution,
         comment:req.body.comment,
     })
-    console.log('')
     let newUser = await user.save()
     res.send(`Thank for submitting ${newUser.name}`)
 })
 
+app.get('/test',(req,res)=>{
+    res.send(process.env);
+})
 
 
 app.listen(PORT, () => {
