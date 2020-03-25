@@ -20,17 +20,18 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.post('/submit', async (req,res)=>{
-    const user = new User({
-        name: req.body.name,
-        email:req.body.email,
-        age:req.body.age,
-        job:req.body.job,
-        aspects:req.body.aspects,
-        contribution:req.body.contribution,
-        comment:req.body.comment,
-    })
-    let newUser = await user.save()
-    res.send(`Thank for submitting ${newUser.name}`)
+    res.send('good')
+    // const user = new User({
+    //     name: req.body.name,
+    //     email:req.body.email,
+    //     age:req.body.age,
+    //     job:req.body.job,
+    //     aspects:req.body.aspects,
+    //     contribution:req.body.contribution,
+    //     comment:req.body.comment,
+    // })
+    // let newUser = await user.save()
+    // res.send(`Thank for submitting ${newUser.name}`)
 })
 
 
