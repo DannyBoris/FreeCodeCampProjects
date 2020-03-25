@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const User = require('./models/User')
 
 try{
-    mongoose.connect(process.env.DB_CONNECTION ,{
+    mongoose.connect(process.env.DB_CONNECTION || 'mongodb://dannyboris1:tpifSP1062016@ds149489.mlab.com:49489/databay',{
         useUnifiedTopology: true, 
         useNewUrlParser:true},
         ()=>console.log('Connected'))
@@ -32,22 +32,6 @@ app.post('/submit', async (req,res)=>{
     let newUser = await user.save()
     res.send(`Thank for submitting ${newUser.name}`)
 })
-
-app.get('/test',(req,res)=>{
-    try{
-        mongoose.connect(process.env.DB_CONNECTION ,{
-            useUnifiedTopology: true, 
-            useNewUrlParser:true},
-            ()=>res.send('Connected'))
-    }catch(err){
-        res.send('Could not connect to db!!!' + err)
-    }
-    finally{
-        res.send('ok')
-    }
-    
-})
-
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
