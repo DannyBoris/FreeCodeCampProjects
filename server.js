@@ -1,36 +1,33 @@
 const path = require('path')
 const express = require('express')
-const app = express()
 const mongoose = require('mongoose')
-const PORT = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const User = require('./models/User')
 
-var options = { 
-    server: { 
-      socketOptions: { 
-        keepAlive: 300000, connectTimeoutMS: 30000 
-      } 
-    }, 
-    replset: { 
-      socketOptions: { 
-        keepAlive: 300000, 
-        connectTimeoutMS : 30000 
-      } 
-    ,
-         useUnifiedTopology: true, 
-        useNewUrlParser:true},
-  };
-try{
-    mongoose.connect(process.env.DB_CONNECTION, options,
+const app = express()
+const PORT = process.env.PORT || 3000
+
+//Connect to mongodb --> mongoose
+//Options will keep connection alive in production
+let socketOptions = { keepAlive: 300000, connectTimeoutMS: 30000 }
+
+let options = { 
+    server: { socketOptions  }, 
+    replset: { socketOptions },
+    useUnifiedTopology: true, useNewUrlParser:true
+};
+
+    try{
+    mongoose.connect(process.env.DB_CONNECTION , options,
         ()=>console.log('Connected'))
-}catch{
-    console.log('Could not connect to db!!!')
+    }catch(err){
+    console.error('Could not connect to db!!!' + err)
 }
 
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
+app.set('view engine','pug')
 
 app.post('/submit', async (req,res)=>{
     const user = new User({
@@ -44,18 +41,9 @@ app.post('/submit', async (req,res)=>{
     })
 
     let newUser = await user.save()
-    res.send(`Thank for submitting ${newUser.name}`)
+    res.render('response',{name:newUser.name.toUpperCase()});
 })
-app.get('/test',(req,res)=>{
-    let x = null
-    try{
-        mongoose.connect(process.env.DB_CONNECTION,options,
-            ()=>{x='connected'})
-    }catch(err){
-        x = err
-    }
-    res.send(x)
-})
+
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
