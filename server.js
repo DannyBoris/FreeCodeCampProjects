@@ -24,7 +24,6 @@ var options = {
     },
     useUnifiedTopology: true, useNewUrlParser:true
   };
-};
 
     try{
     mongoose.connect(process.env.DB_CONNECTION , options,
